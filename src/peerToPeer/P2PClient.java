@@ -3,8 +3,8 @@ package peerToPeer;
 import java.io.IOException;
 import java.net.*;
 
-import srvComm.Client;
-import srvComm.Serveur;
+import clt_srv_Concurrents.Client;
+import clt_srv_Concurrents.Serveur;
 import tools.KeyboardReader;
 import tools.LoggerClient;
 
@@ -73,7 +73,7 @@ public class P2PClient extends Client implements Runnable {
 			new Thread(new Serveur(port_server_libre, "Je suis le serveur du client P2P " + client_name)).start();
 			port_server_libre++;
 		} catch (SocketException e) {
-			mylogger.log(LoggerClient.OFF, "Erreur à l'initisation du serveur du client P2P ");
+			mylogger.log(LoggerClient.OFF, "Erreur a l'initisation du serveur du client P2P ");
 			mylogger.log(LoggerClient.IMPORTANT, e.getMessage());
 			//System.err.println("Erreur à l'initisation du serveur du client P2P " + client_name + " : ");
 			//e.printStackTrace();
@@ -91,7 +91,7 @@ public class P2PClient extends Client implements Runnable {
 		try {
 			ds_com.send(dp);
 		} catch (IOException e) {
-			mylogger.log(LoggerClient.OFF, "Erreur lors de l'envoi d'un message à l'hôte depuis le client : ");
+			mylogger.log(LoggerClient.OFF, "Erreur lors de l'envoi d'un message a l'hote depuis le client : ");
 			mylogger.log(LoggerClient.IMPORTANT, e.getMessage());
 			//System.err.println("Erreur lors de l'envoi d'un message à l'hôte depuis le client : " + client_name);
 			//e.printStackTrace();
@@ -103,9 +103,9 @@ public class P2PClient extends Client implements Runnable {
 		try {
 			return InetAddress.getByName(KeyboardReader.getString());
 		} catch (UnknownHostException e) {
-			mylogger.log(LoggerClient.IMPORTANT, "Impossible de récupérer l'adresse saisie par le client : ");
+			mylogger.log(LoggerClient.IMPORTANT, "Impossible de recuperer l'adresse saisie par le client : ");
 			mylogger.log(LoggerClient.INFO, e.getMessage());
-			System.err.println("Impossible de récupérer l'adresse, veuillez vérifier votre saisie : ");
+			System.err.println("Impossible de recuperer l'adresse, veuillez verifier votre saisie : ");
 			return getAddress();
 		}
 	}
@@ -114,8 +114,8 @@ public class P2PClient extends Client implements Runnable {
 		System.out.println("Veuillez taper le port de l'hôte auquel vous voulez vous connecter : ");
 		int port = KeyboardReader.getInt();
 		if (port == -1) {
-			mylogger.log(LoggerClient.IMPORTANT, "Impossible de récupérer le port saisi par le client");
-			System.err.println("Impossible de récupérer le port, veuillez vérifier votre saisie : ");
+			mylogger.log(LoggerClient.IMPORTANT, "Impossible de recuperer le port saisi par le client");
+			System.err.println("Impossible de recuperer le port, veuillez verifier votre saisie : ");
 			return getPort();
 		}
 		return port;
@@ -125,8 +125,8 @@ public class P2PClient extends Client implements Runnable {
 		System.out.println("Veuillez taper le message que vous voulez envoyer : ");
 		String message = KeyboardReader.getString();
 		if (message == "") {
-			mylogger.log(LoggerClient.IMPORTANT, "Impossible de récupérer le message saisi par le client");
-			System.err.println("Impossible de récupérer le message, veuillez vérifier votre saisie : ");
+			mylogger.log(LoggerClient.IMPORTANT, "Impossible de recuperer le message saisi par le client");
+			System.err.println("Impossible de recuperer le message, veuillez verifier votre saisie : ");
 			return getMessage();
 		}
 		return message;
@@ -161,15 +161,15 @@ public class P2PClient extends Client implements Runnable {
 				case 1:
 					sendMessage();
 					int port = super.recevoir();
-					System.out.println("Le serveur répond depuis le port :" + port);
+					System.out.println("Le serveur repond depuis le port :" + port);
 					break;
 				default:
-					System.out.println("Choix erroné");
-					mylogger.log(LoggerClient.ALL, "Choix erroné dans le menu : " + choix);
+					System.out.println("Choix errone");
+					mylogger.log(LoggerClient.ALL, "Choix errone dans le menu : " + choix);
 					break;
 			}
 		}
-		System.out.println("Vous avez bien quitté.");
+		System.out.println("Vous avez bien quitte.");
 		mylogger.dispose();
 	}
 	

@@ -6,9 +6,9 @@ import java.util.*;
 
 import tools.LoggerServer;
 
-public class P2PServeur extends srvComm.Serveur {
+public class P2PServeur extends clt_srv_Concurrents.Serveur {
 	
-	public static final String DEFAULT_P2PSERVER_MSG = "Je suis un serveur P2P qui répond.";
+	public static final String DEFAULT_P2PSERVER_MSG = "Je suis un serveur P2P qui repond.";
 	
 	private ArrayList<String> client_history;
 	
@@ -30,7 +30,7 @@ public class P2PServeur extends srvComm.Serveur {
 			String client_info = "Adresse : " + dp.getAddress().toString() + ", Port : " + dp.getPort();
 			client_history.add(client_info);
 		} catch (IOException e) {
-			mylogger.log(LoggerServer.OFF, "SERVER :: Erreur lors de la réception d'un message client");
+			mylogger.log(LoggerServer.OFF, "SERVER :: Erreur lors de la reception d'un message client");
 			mylogger.log(LoggerServer.IMPORTANT, e.getMessage());
 			//System.err.println("SERVER :: Erreur lors de la réception d'un message client : ");
 			//e.printStackTrace();
@@ -40,7 +40,7 @@ public class P2PServeur extends srvComm.Serveur {
 	
 	@Override
 	public void startComm(DatagramPacket dp) {
-		String clients_info = "Client précédemment connectés au serveur : " + client_history.toString();
+		String clients_info = "Client precedemment connectes au serveur : " + client_history.toString();
 		dp.setData(clients_info.getBytes());
 		try {
 			ds_srv.send(dp);
