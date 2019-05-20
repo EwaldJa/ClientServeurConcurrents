@@ -8,10 +8,60 @@ import srvComm.Serveur;
 import tools.KeyboardReader;
 import tools.LoggerClient;
 
+/**
+ * <b>P2PClient est la classe représentant un client peer-to-peer</b><br>
+ * <p>
+ * P2PClient possède trois attributs qui servent aux méthodes de la classe :<br>
+ * </p>
+ * <ul>
+ * <li>Une String qui représente le nom du client<br></li>
+ * <li>Un entier représentant le port server du client (pour qu'il puisse gérer les autres<br>
+ *     client P2P voulant lui parler<br></li>
+ * <li>Un <b>LoggerClient</b> pour tracer les logs d'exécution <br></li>
+ * </ul>
+ * <p>
+ * Cette classe possède plusieurs méthodes privées, permettant notamment de récupérer des<br>
+ * valeurs entrées par l'utilisateur. Implémentant <i>Runnable</i>, elle possède<br>
+ * une méthode run, qui fait office de menu pour l'utilisateur.<br>
+ * </p>
+ *
+ * @author Ewald JANIN
+ *
+ * @see #client_name
+ * @see #port_server_libre
+ * @see #mylogger
+ * @see P2PClient#P2PClient(String)
+ * @see P2PClient#sendMessage()
+ * @see P2PClient#getAddress() ()
+ * @see P2PClient#getPort() ()
+ * @see P2PClient#getMessage()
+ * @see P2PClient#run()
+ * @see P2PClient#finalize() ()
+ */
 public class P2PClient extends Client implements Runnable {
-	
+
+	/**
+	 * <b>client_name, de type String</b><br>
+	 * <p>
+	 * Attribut représentant le nom du client<br>
+	 * </p>
+	 */
 	private String client_name;
+
+	/**
+	 * <b>port_server_libre, entier statique valant 6000 à l'initialisation</b><br>
+	 * <p>
+	 * Attribut représentant le numéro de port sur lequel le client va faire tourner son serveur<br>
+	 * </p>
+	 */
 	private static int port_server_libre = 6000;
+
+	/**
+	 * <b>mylogger, de type LoggerClient</b><br>
+	 * <p>
+	 * Permet d'enregistrer tout ce qu'il se passe durant une exécution de P2PClient<br>
+	 * </p>
+	 */
 	private LoggerClient mylogger;
 	
 	
