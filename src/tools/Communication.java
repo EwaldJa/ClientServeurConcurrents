@@ -27,20 +27,20 @@ public class Communication implements Runnable {
 		try {
 			ds_com.receive(rec_dp);
 		} catch (IOException e) {
-			mylogger.log(LoggerServer.OFF, "Erreur lors de la réception d'un message client");
+			mylogger.log(LoggerServer.OFF, "Erreur lors de la reception d'un message client");
 			mylogger.log(LoggerServer.IMPORTANT, e.getMessage());
-			//System.err.println("Erreur lors de la réception d'un message client : ");
+			//System.err.println("Erreur lors de la reception d'un message client : ");
 			//e.printStackTrace();
 		}
 		String rec_msg = "";
 		try {
 			rec_msg = new String (rec_dp.getData(), "ascii");
 			hist_msg_clt.add(rec_msg);
-			mylogger.log(LoggerServer.DEBUG, "Message reçu :" + rec_msg);
+			mylogger.log(LoggerServer.DEBUG, "Message recu :" + rec_msg);
 		} catch (UnsupportedEncodingException e) {
-			mylogger.log(LoggerServer.OFF, "Erreur lors du décodage d'un message client");
+			mylogger.log(LoggerServer.OFF, "Erreur lors du decodage d'un message client");
 			mylogger.log(LoggerServer.IMPORTANT, e.getMessage());
-			//System.err.println("Erreur lors du décodage d'un message client : ");
+			//System.err.println("Erreur lors du decodage d'un message client : ");
 			//e.printStackTrace();
 		}
 		if (rec_msg == "DE") {
@@ -58,9 +58,9 @@ public class Communication implements Runnable {
 		try {
 			ds_com.send(dp_client);
 		} catch (IOException e) {
-			mylogger.log(LoggerServer.OFF, "Erreur lors de la réponse au client");
+			mylogger.log(LoggerServer.OFF, "Erreur lors de la reponse au client");
 			mylogger.log(LoggerServer.IMPORTANT, e.getMessage());
-			//System.err.println("Erreur lors de la réponse au client : ");
+			//System.err.println("Erreur lors de la reponse au client : ");
 			//e.printStackTrace();
 		}
 	}

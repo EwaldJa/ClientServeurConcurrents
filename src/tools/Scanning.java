@@ -13,7 +13,7 @@ public class Scanning {
 				res.add(i);
 				ds.close();
 			} catch (SocketException e) {
-				System.out.println("Le port numéro " + i + " n'est pas disponible");
+				System.out.println("Le port numero " + i + " n'est pas disponible");
 			}
 		}
 		return res;

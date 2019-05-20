@@ -34,9 +34,9 @@ import java.util.Date;
  * @see #OFF
  * @see #level
  * @see #mypw
- * @see LoggerClient#LoggerClient()
- * @see LoggerClient#LoggerClient(int)
  * @see LoggerClient#LoggerClient(String)
+ * @see LoggerClient#LoggerClient(int, String)
+ * @see LoggerClient#LoggerClient(String, String)
  * @see LoggerClient#log(int, String)
  * @see LoggerClient#dispose()
  */

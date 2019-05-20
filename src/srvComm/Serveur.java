@@ -14,7 +14,7 @@ public class Serveur implements Runnable {
 	protected LoggerServer mylogger;
 
 	public Serveur(int srv_port) throws SocketException {
-		this(srv_port, "Je suis un serveur intelligent qui répond");
+		this(srv_port, "Je suis un serveur intelligent qui repond");
 	}
 	
 	public Serveur(int srv_port, String server_msg) throws SocketException {
@@ -29,9 +29,9 @@ public class Serveur implements Runnable {
 		try {
 			ds_srv.receive(dp);
 		} catch (IOException e) {
-			mylogger.log(LoggerServer.OFF, "Erreur lors de la réception d'un message client");
+			mylogger.log(LoggerServer.OFF, "Erreur lors de la reception d'un message client");
 			mylogger.log(LoggerServer.IMPORTANT, e.getMessage());
-			//System.err.println("SERVER :: Erreur lors de la réception d'un message client : ");
+			//System.err.println("SERVER :: Erreur lors de la reception d'un message client : ");
 			//e.printStackTrace();
 		}
 		return dp;
@@ -41,9 +41,9 @@ public class Serveur implements Runnable {
 		try {
 			new Thread(new Communication(dp.getAddress(), dp.getPort(), msg)).start();
 		} catch (SocketException e) {
-			mylogger.log(LoggerServer.OFF, "Erreur lors de l'initialisation d'une communication dédiée client");
+			mylogger.log(LoggerServer.OFF, "Erreur lors de l'initialisation d'une communication dediee client");
 			mylogger.log(LoggerServer.IMPORTANT, e.getMessage());
-			//System.err.println("SERVER :: Erreur lors de l'initialisation d'une communication dédiée client : ");
+			//System.err.println("SERVER :: Erreur lors de l'initialisation d'une communication dediee client : ");
 			//e.printStackTrace();
 		}
 	}
@@ -52,11 +52,11 @@ public class Serveur implements Runnable {
 		String msg = "";
 		try {
 			msg = new String(dp.getData(), "ascii");
-			mylogger.log(LoggerServer.DEBUG, "Message reçu : " + msg);
+			mylogger.log(LoggerServer.DEBUG, "Message recu : " + msg);
 		} catch (UnsupportedEncodingException e) {
-			mylogger.log(LoggerServer.OFF, "Erreur lors du décodage d'un message client");
+			mylogger.log(LoggerServer.OFF, "Erreur lors du decodage d'un message client");
 			mylogger.log(LoggerServer.IMPORTANT, e.getMessage());
-			//System.err.println("SERVER :: Erreur lors du décodage d'un message client : ");
+			//System.err.println("SERVER :: Erreur lors du decodage d'un message client : ");
 			//e.printStackTrace();
 		}
 		if (msg.contains("CO")) {

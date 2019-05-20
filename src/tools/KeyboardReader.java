@@ -3,9 +3,9 @@ package tools;
 import java.io.*;
 
 /**
- * Classe permettant de gérer les entrées clavier dans le projet (notamment en mode d'affichage
- * console), pour ne pas avoir à écrire de lourdes méthodes dans les contrôleurs déjà
- * suffisamment chargés
+ * Classe permettant de gerer les entrees clavier dans le projet (notamment en mode d'affichage
+ * console), pour ne pas avoir a ecrire de lourdes methodes dans les contrï¿½oleurs deja
+ * suffisamment charges
  * Elle efface aussi les erreurs
  * 
  * @author Ewald
@@ -15,19 +15,19 @@ public class KeyboardReader {
 	private static BufferedReader mybr=new BufferedReader(new InputStreamReader(System.in));
 
 	/**
-	 * Méthode permettant de récupérer le caractère saisi par l'utilisateur
+	 * Methode permettant de recuperer le caractere saisi par l'utilisateur
 	 * 
-	 * @return le caractère en question
+	 * @return le caractere en question
 	 */
 	public static char getChar() {
 		return getString().charAt(0);
 	}
 
 	/**
-	 * Méthode permettant de récupérer le tableau de caractères saisi par l'utilisateur
+	 * Methode permettant de recuperer le tableau de caracteres saisi par l'utilisateur
 	 * Utile pour un code par exemple
 	 * 
-	 * @return le tableau de caractères en question
+	 * @return le tableau de caracteres en question
 	 */
 	public static char[] getChars() {
 		String s = getString();
@@ -35,16 +35,16 @@ public class KeyboardReader {
 	}
 				
 	/**
-	 * Méthode permettant de récupérer la chaîne saisie par l'utilisateur
+	 * Methode permettant de recuperer la chaine saisie par l'utilisateur
 	 * 
-	 * @return la chaîne en question
+	 * @return la chaï¿½ne en question
 	 */
 	public static String getString() {
 		return getLine();
 	}
 		
 	/**
-	 * Méthode permettant de récupérer l'entier saisi par l'utilisateur
+	 * Methode permettant de recuperer l'entier saisi par l'utilisateur
 	 * 
 	 * @return l'entier en question
 	 */
@@ -55,7 +55,7 @@ public class KeyboardReader {
 	}
 	
 	/**
-	 * Permet de faire une pause dans la demande de caractère
+	 * Permet de faire une pause dans la demande de caractere
 	 */
 	public static void pause() {
 		try{
@@ -64,7 +64,7 @@ public class KeyboardReader {
 	}
 
 	/**
-	 * Permet de récupérer la ligne complète saisie par l'utilisateur
+	 * Permet de recuperer la ligne complete saisie par l'utilisateur
 	 * 
 	 * @return toute la ligne
 	 */

@@ -44,17 +44,17 @@ public class Client implements Runnable {
 			ds_com.receive(rec_dp);
 			port_srv = rec_dp.getPort();
 		} catch (IOException e) {
-			System.err.println("Erreur lors de la réception d'un message serveur : ");
+			System.err.println("Erreur lors de la reception d'un message serveur : ");
 			e.printStackTrace();
 		}
 		String rec_msg = "";
 		try {
 			rec_msg = new String (rec_dp.getData(), "ascii");
 		} catch (UnsupportedEncodingException e) {
-			System.err.println("Erreur lors du décodage d'un message serveur : ");
+			System.err.println("Erreur lors du decodage d'un message serveur : ");
 			e.printStackTrace();
 		}
-		System.out.println("Réponse serveur : " + rec_msg);
+		System.out.println("Reponse serveur : " + rec_msg);
 		return port_srv;
 	}
 	
@@ -64,14 +64,14 @@ public class Client implements Runnable {
 		try {
 			ds_com.send(dp_serveur);
 		} catch (IOException e) {
-			System.err.println("Erreur lors de la réponse au serveur : ");
+			System.err.println("Erreur lors de la reponse au serveur : ");
 			e.printStackTrace();
 		}
 	}
 
 	@Override
 	public void run() {
-		System.out.println("Initialisation de la communication, côté client");
+		System.out.println("Initialisation de la communication, cote client");
 		String init = "CO";
 		dp_srv.setData(init.getBytes());
 		try {
@@ -87,7 +87,7 @@ public class Client implements Runnable {
 			envoyer(message, dp_srv, srv_port);
 			nb_msg_send++;
 			if (nb_msg_send == max_msg) {
-				System.out.println("Fermeture de la communication côté client.");
+				System.out.println("Fermeture de la communication cote client.");
 				envoyer("DE", dp_srv, srv_port);
 				fin_com = true;
 			}
