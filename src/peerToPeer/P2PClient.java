@@ -3,8 +3,8 @@ package peerToPeer;
 import java.io.IOException;
 import java.net.*;
 
-import clt_srv_Concurrents.Client;
-import clt_srv_Concurrents.Serveur;
+import clientServeur.Client;
+import clientServeur.Serveur;
 import tools.KeyboardReader;
 import tools.LoggerClient;
 

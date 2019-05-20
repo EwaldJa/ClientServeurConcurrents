@@ -21,7 +21,7 @@ public class Communication implements Runnable {
 		mylogger = new LoggerServer("defaultconfigServer.txt", ds_com.getLocalPort());
 	}
 	
-	public boolean recevoir() {
+	private boolean recevoir() {
 		byte[] buffer = new byte[8192];
 		DatagramPacket rec_dp = new DatagramPacket(buffer, 8192);
 		try {
@@ -52,7 +52,7 @@ public class Communication implements Runnable {
 		}
 	}
 	
-	public void envoyer (String message, DatagramPacket dp_client) {
+	private void envoyer (String message, DatagramPacket dp_client) {
 		mylogger.log(LoggerServer.DEBUG, "Envoi du message '" + message + "' au client @" + dp_client.getAddress().toString() + ":" + dp_client.getPort());
 		dp_client.setData(message.getBytes());
 		try {

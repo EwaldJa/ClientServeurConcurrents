@@ -1,4 +1,4 @@
-package clt_srv_Concurrents;
+package clientServeur;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

@@ -6,7 +6,7 @@ import java.util.*;
 
 import tools.LoggerServer;
 
-public class P2PServeur extends clt_srv_Concurrents.Serveur {
+public class P2PServeur extends clientServeur.Serveur {
 	
 	public static final String DEFAULT_P2PSERVER_MSG = "Je suis un serveur P2P qui repond.";
 	
