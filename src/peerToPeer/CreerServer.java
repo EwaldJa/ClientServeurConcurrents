@@ -1,6 +1,6 @@
 package peerToPeer;
 
-import java.net.*;
+import java.net.SocketException;
 
 public class CreerServer {
 

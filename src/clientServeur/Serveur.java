@@ -1,11 +1,13 @@
 package clientServeur;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.*;
-
 import tools.Communication;
 import tools.LoggerServer;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.SocketException;
 
 public class Serveur implements Runnable {
 	

@@ -1,10 +1,11 @@
 package peerToPeer;
 
-import java.io.IOException;
-import java.net.*;
-import java.util.*;
-
 import tools.LoggerServer;
+
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.SocketException;
+import java.util.ArrayList;
 
 public class P2PServeur extends clientServeur.Serveur {
 	

@@ -1,7 +1,8 @@
 package tools;
 
-import java.util.*;
-import java.net.*;
+import java.net.DatagramSocket;
+import java.net.SocketException;
+import java.util.ArrayList;
 
 public class Scanning {
 	

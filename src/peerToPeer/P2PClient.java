@@ -1,12 +1,15 @@
 package peerToPeer;
 
-import java.io.IOException;
-import java.net.*;
-
 import clientServeur.Client;
 import clientServeur.Serveur;
 import tools.KeyboardReader;
 import tools.LoggerClient;
+
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 /**
  * <b>P2PClient est la classe représentant un client peer-to-peer</b><br>

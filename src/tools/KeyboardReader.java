@@ -1,6 +1,8 @@
 package tools;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Classe permettant de gerer les entrees clavier dans le projet (notamment en mode d'affichage
